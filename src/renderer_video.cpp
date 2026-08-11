@@ -34,6 +34,7 @@ HRESULT STDMETHODCALLTYPE VideoRenderer::EventNotify(DWORD event, DWORD_PTR, DWO
         m_mediaEngineReady = true;
         if (m_mediaEngine) {
             m_mediaEngine->SetLoop(TRUE);
+            // Critical: SetLoop MUST be called before Play to avoid pause on loopback
             m_mediaEngine->SetMuted(m_muted ? TRUE : FALSE);
             m_mediaEngine->SetVolume(m_volume);
             m_mediaEngine->Play();
