@@ -90,8 +90,8 @@ Config ConfigLoad() {
             }
         }
 
-        cfg.muted = j.value("muted", true);
-        cfg.volume = j.value("volume", 0.5f);
+        cfg.muted = j.value("muted", false);
+        cfg.volume = j.value("volume", 0.8f);
         cfg.fpsCap = j.value("fpsCap", 30);
         cfg.pauseOnBattery = j.value("pauseOnBattery", true);
         cfg.pauseOnFullscreenApp = j.value("pauseOnFullscreenApp", true);
